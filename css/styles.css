@@ -37,6 +37,50 @@ footer p {
 }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.inline-icon {
+  width: 1em;
+  height: 1em;
+  margin-top:-3px;
+}
+
+.card {
+  background: #192F3D;
+  color: #b8d5e6;
+}
+
+.btn-threed-dgreen { background: #246d5c; }
+.btn-threed-dgreen-front { background: #3bba9c; }
+.btn-threed-green { background: #3a796b; }
+.btn-threed-green-front { background: #76cfba; }
+
+/* 3d button styles credit to https://www.joshwcomeau.com/animation/3d-button/ */
+.pushable {
+  border-radius: 3px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  max-width:200px;
+  appearance: button;
+  text-decoration:none;
+}
+.front {
+  display: block;
+  padding: 12px 25px;
+  border-radius: 3px;
+  font-size: 1.25rem;
+  font-weight:bold;
+  color: white;
+  transform: translateY(-6px);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
+
+
+
+
 
 
 .ocean-container {
