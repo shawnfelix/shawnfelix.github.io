@@ -58,10 +58,11 @@ footer p {
   border-radius: 3px;
   border: none;
   padding: 0;
+  margin-bottom:11px;
   cursor: pointer;
   outline-offset: 4px;
   max-width:200px;
-  appearance: button;
+  width:150px;
   text-decoration:none;
 }
 .front {
