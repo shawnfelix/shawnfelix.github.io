@@ -50,7 +50,7 @@ footer p {
   cursor:pointer;
 }
 .card:hover {
-  transform:translateY(-10px);
+  transform:translateY(-5px);
 }
 
 #album-title {

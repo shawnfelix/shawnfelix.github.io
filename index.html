@@ -11,6 +11,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/timeline.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84769be608.js" crossorigin="anonymous"></script>
     <style>
       .bd-placeholder-img {
@@ -107,8 +108,8 @@
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-dblue">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="https://github.com/shawnfelix" target="_blank" class="text-link">GitHub</a></li>
-            <li><a href="#" class="text-link">Email me</a></li>
+            <li><a href="https://github.com/shawnfelix" target="_blank" class="text-link"><i class="fab fa-github px-2"></i>GitHub</a></li>
+            <li><a href="#" class="text-link"><i class="fas fa-at px-2"></i>Email me</a></li>
           </ul>
         </div>
       </div>
@@ -130,10 +131,12 @@
 
 <main>
 
-  <section class="py-5 container">
+  <section class="py-md-5 py-sm-4 py-3 container">
     <div class="row">
       <div class="col-lg-3 col-md-4 col-12 mx-auto">
-        <img class="w-100 box-radius" src="assets/IMG_4215-bw.jpg" style="filter: sepia(.45) hue-rotate(172deg);">
+        <div class="mx-auto col-md-12 col-4 pb-md-0 pb-2">
+          <img class="w-100 box-radius" src="assets/IMG_4215-bw.jpg" style="filter: sepia(.45) hue-rotate(172deg);">
+        </div>
       </div>
       <div class="col-lg-9 col-md-8 col-12 mx-auto text-dblue">
         <h1 class="fw-bold ">Shawn Felix</h1>
@@ -145,18 +148,21 @@
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
-    <div class="row py-4">
-      
+    <!-- buttons row -->
+    <div class="row py-4 mb-sm-0 mb-3">
       <div class="col-lg-3 col-md-0 col-0 mx-auto">
         <!-- spacer -->
       </div>
-      <div class="col-lg-9 col-md-8 col-sm-8 col-10 mx-auto">
+      <div class="col-lg-9 col-md-8 col-sm-8 col-12 mx-md-auto">
         <div class="btn-action-container mx-auto">
-          <button class="btn-threed-green pushable">
+          <button onclick="togglePage('page-about');" class="btn-threed-dgreen pushable">
+            <span class="btn-threed-dgreen-front front">About Me</span>
+          </button>
+          <button onclick="togglePage('page-resume');" class="btn-threed-green pushable">
             <span class="btn-threed-green-front front">Resume</span>
           </button>
-          <button class="btn-threed-dgreen pushable">
-            <span class="btn-threed-dgreen-front front">About Me</span>
+          <button onclick="togglePage('page-projects');" class="btn-threed-dgreen pushable">
+            <span class="btn-threed-dgreen-front front">Projects</span>
           </button>
           <a href="https://github.com/shawnfelix" target="_blank" style="text-decoration:none;">
             <button class="btn-threed-green pushable">
@@ -166,9 +172,6 @@
             </span>
             </button>
           </a>
-          <button class="btn-threed-dgreen pushable">
-            <span class="btn-threed-dgreen-front front">Projects</span>
-          </button>
         </div>
       </div>
     </div>
@@ -181,15 +184,182 @@
     </div>
   </div>
   
+  <!-- CONTENT CONTAINER -->
   <div class="album py-5 bg-lblue" style="z-index:1000; position:relative;">
     <div>
-      <div class="page-title text-green" style="text-align:center; margin-top:-100px;padding-bottom:200px;z-index:1000">
+      <div class="page-title text-green" style="text-align:center; margin-top:-100px;padding-bottom:50px;z-index:1000">
         <h1 id="album-title" class="display-4 user-select-none">
-          HELLO
+          About Me
         </h1>
       </div>
     </div>
-    <div class="pagelink container">
+    
+    
+    
+    
+    <!--ABOUT ME PAGE -->
+    <div id="page-about" class="pagecontent container text-green">
+      <div class="container">
+        <div class="timeline">
+            <div class="timeline-row">
+              <div class="timeline-time">
+                7:45PM<small>Dec 21</small>
+              </div>
+              <div class="timeline-content">
+                <i class="icon-attachment"></i>
+                <h4>Admin theme!</h4>
+                <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
+                <div class="thumbs">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Maxwell Admin">
+                </div>
+                <div class="">
+                  <span class="badge badge-pill">Sales</span>
+                  <span class="badge badge-pill">Admin</span>
+                </div>
+              </div>
+            </div>
+        
+            <div class="timeline-row">
+              <div class="timeline-time">
+                8:00 AM<small>Dec 18</small>
+              </div>
+              <div class="timeline-content">
+                <i class="icon-code"></i>
+                <h4>Admin Dashboard!</h4>
+                <p>
+                  Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar.
+                </p>
+                <div class="thumbs">
+                  <div class="thumbs">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Maxwell Admin">
+                </div>
+                </div>
+                <div class="">
+                  <span class="badge badge-pill">Graphs</span>
+                  <span class="badge badge-pill">Chat</span>
+                </div>
+              </div>
+            </div>
+        
+            <div class="timeline-row">
+              <div class="timeline-time">
+                7:25 PM<small>Dec 6</small>
+              </div>
+              <div class="timeline-content">
+                <i class="icon-turned_in_not"></i>
+                <h4>Best Admin Template!</h4>
+                <p>Custom C3 graphs, Custom flot graphs, flot graphs, small graphs, Sass, profile and timeline.</p>
+                <div>
+                  <span class="badge badge-pill">Invoice</span>
+                  <span class="badge badge-pill">Tasks</span>
+                </div>
+              </div>
+            </div>
+        
+            <div class="timeline-row">
+              <div class="timeline-time">
+                3:55 PM<small>Dec 26</small>
+              </div>
+              <div class="timeline-content">
+                <i class="icon-directions"></i>
+                <h4>Maxwell Admin</h4>
+                <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
+                <div>
+                  <span class="badge badge-pill">Profile</span>
+                  <span class="badge badge-pill">Sales</span>
+                </div>
+              </div>
+            </div>
+        
+            <div class="timeline-row">
+              <div class="timeline-time">
+                5:24 PM<small>Dec 12</small>
+              </div>
+              <div class="timeline-content">
+                <i class="icon-change_history"></i>
+                <h4>Maxwell Dashboard</h4>
+                <p class="no-margin">Maxwell Admin dashboard includes invoice, profile, tasks, gallery, projects, maintanence.</p>
+                <div class="thumbs">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="Maxwell Admin">
+                </div>
+                <div>
+                  <span class="badge badge-pill">Analytics</span>
+                  <span class="badge badge-pill">Contacts</span>
+                </div>
+              </div>
+            </div>
+        
+            <div class="timeline-row">
+              <div class="timeline-time">
+                8:00 AM<small>Dec 18</small>
+              </div>
+              <div class="timeline-content">
+                <i class="icon-code"></i>
+                <h4>Admin Dashboard!</h4>
+                <p>
+                  Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar.
+                </p>
+                <div class="thumbs">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Maxwell Admin">
+                </div>
+                <div class="">
+                  <span class="badge badge-pill">Ecommerce</span>
+                  <span class="badge badge-pill">CRM</span>
+                </div>
+              </div>
+            </div>
+        
+            <div class="timeline-row">
+              <div class="timeline-time">
+                7:45PM<small>Dec 21</small>
+              </div>
+              <div class="timeline-content">
+                <i class="icon-attachment"></i>
+                <h4>Admin Template!</h4>
+                <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
+                <div class="thumbs">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Maxwell Admin">
+                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Maxwell Admin">
+                </div>
+                <div class="">
+                  <span class="badge badge-pill">Orders</span>
+                  <span class="badge badge-pill">Sales</span>
+                </div>
+              </div>
+            </div>
+        
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <p class="m-0">Loading...</p>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- PROJECTS PAGE -->
+    <div id="page-projects" class="pagecontent container d-none">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
@@ -288,56 +458,12 @@
             </div>
           </div>
         </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View on GitHub</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Demo</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View on GitHub</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Demo</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View on GitHub</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Demo</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+    </div>
+
+    <!-- RESUME PAGE -->
+    <div id="page-resume" class="pagecontent container d-none">
+      resume
     </div>
   </div>
 
