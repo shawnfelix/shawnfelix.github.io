@@ -44,10 +44,23 @@ footer p {
 }
 
 .card {
+  transition: transform .25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s;
   background: #192F3D;
   color: #b8d5e6;
+  cursor:pointer;
+}
+.card:hover {
+  transform:translateY(-10px);
 }
 
+#album-title {
+  font-weight:bold
+}
+@media(max-width:992px) {
+  .btn-action-container {
+    width:305px;
+  }
+}
 .btn-threed-dgreen { background: #246d5c; }
 .btn-threed-dgreen-front { background: #3bba9c; }
 .btn-threed-green { background: #3a796b; }
@@ -73,6 +86,10 @@ footer p {
   font-weight:bold;
   color: white;
   transform: translateY(-6px);
+  transition: filter .2s ease;
+}
+.front:hover {
+  filter: brightness(90%);
 }
 
 .pushable:active .front {
