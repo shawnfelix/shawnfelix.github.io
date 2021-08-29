@@ -1,5 +1,6 @@
+
 function togglePage(page) {
-    tabcontent = document.getElementsByClassName("pagecontent");
+    tabcontent = document.getElementsByClassName("page-content");
     for(var i = 0; i < tabcontent.length; i++){
         tabcontent[i].classList.add("d-none");
     }
@@ -21,3 +22,9 @@ function togglePage(page) {
 
     }
 }
+
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+

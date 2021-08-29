@@ -50,15 +50,20 @@
       .text-dblue-muted {
         color: #7c9bad !important;
       }
+
+      .text-lblue {
+        color: #132531 !important;
+      }
       
       .text-green {
         color: #3bba9c !important;
       }
 
-      .text-link {
+      a {
+        text-underline-offset: 2px;
         color: #3bba9c;
       }
-      .text-link:hover {
+      a:hover {
         color: #246d5c;
       }
       .btn-lblue { 
@@ -108,8 +113,8 @@
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-dblue">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="https://github.com/shawnfelix" target="_blank" class="text-link"><i class="fab fa-github px-2"></i>GitHub</a></li>
-            <li><a href="#" class="text-link"><i class="fas fa-at px-2"></i>Email me</a></li>
+            <li><a href="https://github.com/shawnfelix" target="_blank"><i class="fab fa-github px-2"></i>GitHub</a></li>
+            <li><a href="#"><i class="fas fa-at px-2"></i>Email me</a></li>
           </ul>
         </div>
       </div>
@@ -142,10 +147,16 @@
         <h1 class="fw-bold ">Shawn Felix</h1>
         <p class="fw-std h5 text-dblue-muted">Software Engineer</p>
         <p class="fw-std h5 text-dblue-muted">
+          <i class="fas fa-graduation-cap"></i>
+          B.S. Computer Science
+        </p>
+        <p class="fw-std h5 text-dblue-muted">
           <i class="fas fa-map-marker-alt"></i>
           NYC
         </p>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          
+        </p>
       </div>
     </div>
     <!-- buttons row -->
@@ -158,17 +169,23 @@
           <button onclick="togglePage('page-about');" class="btn-threed-dgreen pushable">
             <span class="btn-threed-dgreen-front front">About Me</span>
           </button>
-          <button onclick="togglePage('page-resume');" class="btn-threed-green pushable">
-            <span class="btn-threed-green-front front">Resume</span>
-          </button>
           <button onclick="togglePage('page-projects');" class="btn-threed-dgreen pushable">
             <span class="btn-threed-dgreen-front front">Projects</span>
           </button>
+          <a href="assets/test.pdf" target="_blank" style="text-decoration:none;">
+            <button class="btn-threed-green pushable">
+            <span class="btn-threed-green-front front">
+              Resume 
+              <i class="fas fa-external-link-alt ext-link-button-icon"></i>
+            </span>
+            </button>
+          </a>
           <a href="https://github.com/shawnfelix" target="_blank" style="text-decoration:none;">
             <button class="btn-threed-green pushable">
             <span class="btn-threed-green-front front">
               GitHub
               <i class="fab fa-github"></i>
+              <i class="fas fa-external-link-alt ext-link-button-icon"></i>
             </span>
             </button>
           </a>
@@ -187,7 +204,7 @@
   <!-- CONTENT CONTAINER -->
   <div class="album py-5 bg-lblue" style="z-index:1000; position:relative;">
     <div>
-      <div class="page-title text-green" style="text-align:center; margin-top:-100px;padding-bottom:50px;z-index:1000">
+      <div class="page-title text-green" style="text-align:center; margin-top:-100px;padding-bottom:20px;z-index:1000">
         <h1 id="album-title" class="display-4 user-select-none">
           About Me
         </h1>
@@ -198,152 +215,226 @@
     
     
     <!--ABOUT ME PAGE -->
-    <div id="page-about" class="pagecontent container text-green">
+    <div id="page-about" class="page-content container text-dblue-muted">
       <div class="container">
-        <div class="timeline">
-            <div class="timeline-row">
-              <div class="timeline-time">
-                7:45PM<small>Dec 21</small>
-              </div>
-              <div class="timeline-content">
-                <i class="icon-attachment"></i>
-                <h4>Admin theme!</h4>
-                <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
-                <div class="thumbs">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Maxwell Admin">
-                </div>
-                <div class="">
-                  <span class="badge badge-pill">Sales</span>
-                  <span class="badge badge-pill">Admin</span>
-                </div>
-              </div>
-            </div>
-        
-            <div class="timeline-row">
-              <div class="timeline-time">
-                8:00 AM<small>Dec 18</small>
-              </div>
-              <div class="timeline-content">
-                <i class="icon-code"></i>
-                <h4>Admin Dashboard!</h4>
-                <p>
-                  Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar.
-                </p>
-                <div class="thumbs">
-                  <div class="thumbs">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Maxwell Admin">
-                </div>
-                </div>
-                <div class="">
-                  <span class="badge badge-pill">Graphs</span>
-                  <span class="badge badge-pill">Chat</span>
-                </div>
-              </div>
-            </div>
-        
-            <div class="timeline-row">
-              <div class="timeline-time">
-                7:25 PM<small>Dec 6</small>
-              </div>
-              <div class="timeline-content">
-                <i class="icon-turned_in_not"></i>
-                <h4>Best Admin Template!</h4>
-                <p>Custom C3 graphs, Custom flot graphs, flot graphs, small graphs, Sass, profile and timeline.</p>
-                <div>
-                  <span class="badge badge-pill">Invoice</span>
-                  <span class="badge badge-pill">Tasks</span>
-                </div>
-              </div>
-            </div>
-        
-            <div class="timeline-row">
-              <div class="timeline-time">
-                3:55 PM<small>Dec 26</small>
-              </div>
-              <div class="timeline-content">
-                <i class="icon-directions"></i>
-                <h4>Maxwell Admin</h4>
-                <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
-                <div>
-                  <span class="badge badge-pill">Profile</span>
-                  <span class="badge badge-pill">Sales</span>
-                </div>
-              </div>
-            </div>
-        
-            <div class="timeline-row">
-              <div class="timeline-time">
-                5:24 PM<small>Dec 12</small>
-              </div>
-              <div class="timeline-content">
-                <i class="icon-change_history"></i>
-                <h4>Maxwell Dashboard</h4>
-                <p class="no-margin">Maxwell Admin dashboard includes invoice, profile, tasks, gallery, projects, maintanence.</p>
-                <div class="thumbs">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="Maxwell Admin">
-                </div>
-                <div>
-                  <span class="badge badge-pill">Analytics</span>
-                  <span class="badge badge-pill">Contacts</span>
-                </div>
-              </div>
-            </div>
-        
-            <div class="timeline-row">
-              <div class="timeline-time">
-                8:00 AM<small>Dec 18</small>
-              </div>
-              <div class="timeline-content">
-                <i class="icon-code"></i>
-                <h4>Admin Dashboard!</h4>
-                <p>
-                  Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar.
-                </p>
-                <div class="thumbs">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Maxwell Admin">
-                </div>
-                <div class="">
-                  <span class="badge badge-pill">Ecommerce</span>
-                  <span class="badge badge-pill">CRM</span>
-                </div>
-              </div>
-            </div>
-        
-            <div class="timeline-row">
-              <div class="timeline-time">
-                7:45PM<small>Dec 21</small>
-              </div>
-              <div class="timeline-content">
-                <i class="icon-attachment"></i>
-                <h4>Admin Template!</h4>
-                <p>Maxwell Admin Dashboard contains C3 graphs, flot graphs, data tables, calendar, drag &amp; drop and ion slider.</p>
-                <div class="thumbs">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Maxwell Admin">
-                  <img class="img-fluid rounded" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Maxwell Admin">
-                </div>
-                <div class="">
-                  <span class="badge badge-pill">Orders</span>
-                  <span class="badge badge-pill">Sales</span>
-                </div>
-              </div>
-            </div>
-        
-            <div class="timeline-row">
-              <div class="timeline-content">
-                <p class="m-0">Loading...</p>
-              </div>
-            </div>
-        
+        <h3 class="pb-3 text-dblue section-title">WHERE I CAN ADD VALUE</h3>
+        <div class="text-dblue">
+          <p>Java, Python, C</p>
+          <p>MySQL, MariaDB, Oracle</p>
+          <p>Web: Angular, Node.js, TypeScript, JavaScript</p>
+
+          <p>Unit Testing - JUnit, Mockito</p>
+          <br>
+          <div id="notable-coursework">
+            <p>NOTABLE COURSEWORK</p>
           </div>
         </div>
+        <h3 class="pb-3 text-dblue section-title">MY PROFESSIONAL TIMELINE</h3>
+        <div class="timeline">
+          <div class="timeline-row">
+            <div class="timeline-time">
+              2020 - Present<small>Software Engineer</small>
+              <p style="font-size:1rem;">My return to LBi Software after graduation.</p>
+            </div>
+            <div class="timeline-content">
+              <!-- Section 1 -->
+              <div class="timeline-content-section">
+                <div>
+                  <h4 class="d-inline text-dblue">HR HelpDesk 7.0 (Rewrite)</h4>
+                  <span class="d-inline text-green fw-bold"><a href="https://www.lbisoftware.com/home" target="_blank">@LBi Software</a></span>
+                </div>
+                <div class="timeline-content-subtitle">Primary Project</div>
+                <div class="timeline-list">
+                  <ul class="fa-ul" style="margin-left:20px;">
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      Enhanced text prediction for a natural language processing system through improvements in data collection, storage, and semantic analysis.
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      Coverted and optimized 40+ MariaDB queries to Oracle to meet a client's database requirements.
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      Installed and configured framework updates for Spring REST API and Angular for developers to utilize new features and security upgrades.
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline-tech-icons float-end">
+                  <i class="fab fa-java" data-bs-toggle="tooltip" data-bs-placement="top" title="Java 8"></i>
+                  <i class="fab" data-bs-toggle="tooltip" data-bs-placement="top" title="Spring Boot">
+                    <svg style="vertical-align:top" width="2rem" height="2rem" fill="currentColor" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg"><path d="M58.2 3.365a29.503 29.503 0 0 1-3.419 6.064A32.094 32.094 0 1 0 9.965 55.372l1.186 1.047a32.08 32.08 0 0 0 52.67-22.253c.875-8.17-1.524-18.51-5.62-30.8zM14.53 55.558a2.744 2.744 0 1 1-.404-3.857 2.744 2.744 0 0 1 .404 3.857zm43.538-9.61c-7.92 10.55-24.83 6.99-35.672 7.502 0 0-1.922.113-3.857.43 0 0 .73-.31 1.663-.663 7.614-2.65 11.213-3.16 15.838-5.54 8.708-4.427 17.322-14.122 19.112-24.2-3.313 9.695-13.373 18.032-22.53 21.418-6.276 2.313-17.614 4.566-17.614 4.566l-.457-.245c-7.714-3.75-7.952-20.457 6.077-25.845 6.143-2.366 12.02-1.067 18.654-2.65 7.084-1.683 15.28-6.99 18.615-13.916 3.73 11.08 8.224 28.422.166 39.15z"/></svg>
+                  </i>
+                  <i class="fas fa-database" data-bs-toggle="tooltip" data-bs-placement="top" title="Oracle / MariaDB"></i>
+                  <i class="fas fa-feather-alt" data-bs-toggle="tooltip" data-bs-placement="top" title="Apache Lucene & Spark"></i>
+                  <i class="fab fa-angular" data-bs-toggle="tooltip" data-bs-placement="top" title="Angular 9"></i>
+                  <i class="fab" data-bs-toggle="tooltip" data-bs-placement="top" title="TypeScript">
+                    <svg style="vertical-align:top" width="2rem" height="2rem" fill="currentColor" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M 5 4 A 1.0001 1.0001 0 0 0 4 5 L 4 45 A 1.0001 1.0001 0 0 0 5 46 L 45 46 A 1.0001 1.0001 0 0 0 46 45 L 46 5 A 1.0001 1.0001 0 0 0 45 4 L 5 4 z M 6 6 L 44 6 L 44 44 L 6 44 L 6 6 z M 15 23 L 15 26.445312 L 20 26.445312 L 20 42 L 24 42 L 24 26.445312 L 29 26.445312 L 29 23 L 15 23 z M 36.691406 23.009766 C 33.576782 22.997369 30.017578 23.941219 30.017578 28.324219 C 30.017578 34.054219 37.738281 34.055625 37.738281 36.640625 C 37.738281 36.885625 37.842187 38.666016 35.117188 38.666016 C 32.392187 38.666016 30.121094 36.953125 30.121094 36.953125 L 30.121094 41.111328 C 30.121094 41.111328 42.001953 44.954062 42.001953 36.289062 C 42.000953 30.664063 34.208984 30.945391 34.208984 28.150391 C 34.208984 27.067391 34.978375 26.054687 37.109375 26.054688 C 39.240375 26.054688 41.126953 27.3125 41.126953 27.3125 L 41.267578 23.607422 C 41.267578 23.607422 39.113892 23.019408 36.691406 23.009766 z"/></svg>
+                  </i>
+                  <i class="fab fa-html5" data-bs-toggle="tooltip" data-bs-placement="top" title="HTML5"></i>
+                  <i class="fab fa-sass" data-bs-toggle="tooltip" data-bs-placement="top" title="Sass"></i>
+                </div>
+              </div>
+              <!-- Section 2-->
+              <div class="timeline-content-section">
+                <div>
+                  <h4 class="d-inline text-dblue">HR HelpDesk 6.0 (Legacy)</h4>
+                  <span class="d-inline text-green fw-bold"><a href="https://www.lbisoftware.com/home" target="_blank">@LBi Software</a></span>
+                </div>
+                <div class="timeline-content-subtitle">Secondary Project</div>
+                <p> 
+                  Production maintenance for existing clients running legacy versions of the HRHD Web application.
+                </p>
+                <div class="timeline-list">
+                  <ul class="fa-ul" style="margin-left:20px;">
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      -
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline-tech-icons float-end">
+                  <i class="fab fa-java" data-bs-toggle="tooltip" data-bs-placement="top" title="Java 6"></i>
+                  <i class="fas fa-server" data-bs-toggle="tooltip" data-bs-placement="top" title="Apache Struts 1"></i>
+                  <i class="fas fa-database" data-bs-toggle="tooltip" data-bs-placement="top" title="MySQL / Oracle / SQLServer"></i>
+                  <i class="far fa-file-code" data-bs-toggle="tooltip" data-bs-placement="top" title="HTML"></i>
+                  <i class="fab fa-js" data-bs-toggle="tooltip" data-bs-placement="top" title="JavaScript"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-row">
+            <div class="timeline-time">
+              2018 - 2020<small>Stony Brook University</small>
+            </div>
+            <div class="timeline-content">
+              <!-- Section 1 -->
+              <div class="timeline-content-section">
+                <div>
+                  <h4 class="d-inline text-dblue"><i class="fas fa-graduation-cap"></i> B.S. Computer Science</h4>
+                  <span class="d-inline text-green fw-bold"><a href="https://www.stonybrook.edu/" target="_blank"> @Stony Brook University</a></span>
+                </div>
+                <div class="timeline-content-subtitle">Graduated 2020</div>
+                <div class="timeline-list">
+                  <ul class="fa-ul" style="margin-left:20px;">
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      <a href="#notable-coursework">Notable coursework listed above</a>
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      eSports Club Captain/Coordinator (Overwatch). 
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      Stony Brook Skiwolves - Ski and Snowboard Club
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Section 2-->
+              <div class="timeline-content-section">
+                <div>
+                  <h4 class="d-inline text-dblue">Freelance Software Developer</h4>
+                  <span class="d-inline text-green fw-bold"><a href="https://www.lbisoftware.com/home" target="_blank">@LBi Software</a></span>
+                </div>
+                <div class="timeline-content-subtitle">Part time while attending school</div>
+                <div class="timeline-list">
+                  <ul class="fa-ul" style="margin-left:20px;">
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      Developed web software for small-businesses, charities, and individuals.
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      Levereged interpersonal skills to meet with clients, 
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline-tech-icons float-end">
+                  <i class="fab fa-java" data-bs-toggle="tooltip" data-bs-placement="top" title="Java 6"></i>
+                  <i class="fas fa-server" data-bs-toggle="tooltip" data-bs-placement="top" title="Apache Struts 1"></i>
+                  <i class="fas fa-database" data-bs-toggle="tooltip" data-bs-placement="top" title="MySQL / Oracle / SQLServer"></i>
+                  <i class="far fa-file-code" data-bs-toggle="tooltip" data-bs-placement="top" title="HTML"></i>
+                  <i class="fab fa-js" data-bs-toggle="tooltip" data-bs-placement="top" title="JavaScript"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          
+
+
+          
+
+          <div class="timeline-row">
+            <div class="timeline-time">
+              2015 - 2018<small>Software Engineer</small>
+            </div>
+            <div class="timeline-content">
+              <!-- Section 1 -->
+              <div class="timeline-content-section">
+                <div>
+                  <h4 class="d-inline text-dblue">MLB Club Scouting Application</h4>
+                  <span class="d-inline text-green fw-bold"><a href="https://www.lbisoftware.com/home" target="_blank">@LBi Software</a></span>
+                </div>
+                <div class="timeline-content-subtitle"></div>
+                <div class="timeline-list">
+                  <ul class="fa-ul" style="margin-left:20px;">
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      -
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      -
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      -
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline-tech-icons float-end">
+                  <i class="fab fa-java" data-bs-toggle="tooltip" data-bs-placement="top" title="Java 8"></i>
+                  <i class="fab" data-bs-toggle="tooltip" data-bs-placement="top" title="Spring Boot">
+                    <svg style="vertical-align:top" width="2rem" height="2rem" fill="currentColor" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg"><path d="M58.2 3.365a29.503 29.503 0 0 1-3.419 6.064A32.094 32.094 0 1 0 9.965 55.372l1.186 1.047a32.08 32.08 0 0 0 52.67-22.253c.875-8.17-1.524-18.51-5.62-30.8zM14.53 55.558a2.744 2.744 0 1 1-.404-3.857 2.744 2.744 0 0 1 .404 3.857zm43.538-9.61c-7.92 10.55-24.83 6.99-35.672 7.502 0 0-1.922.113-3.857.43 0 0 .73-.31 1.663-.663 7.614-2.65 11.213-3.16 15.838-5.54 8.708-4.427 17.322-14.122 19.112-24.2-3.313 9.695-13.373 18.032-22.53 21.418-6.276 2.313-17.614 4.566-17.614 4.566l-.457-.245c-7.714-3.75-7.952-20.457 6.077-25.845 6.143-2.366 12.02-1.067 18.654-2.65 7.084-1.683 15.28-6.99 18.615-13.916 3.73 11.08 8.224 28.422.166 39.15z"/></svg>
+                  </i>
+                  <i class="fas fa-database" data-bs-toggle="tooltip" data-bs-placement="top" title="MySQL"></i>
+                  <i class="fab fa-angular" data-bs-toggle="tooltip" data-bs-placement="top" title="AngularJS"></i>
+                  <i class="fab fa-js" data-bs-toggle="tooltip" data-bs-placement="top" title="JavaScript"></i>
+                  <i class="fab fa-html5" data-bs-toggle="tooltip" data-bs-placement="top" title="HTML5"></i>
+                </div>
+              </div>
+              <!-- Section 2-->
+              <div class="timeline-content-section">
+                <div>
+                  <h4 class="d-inline text-dblue">HR HelpDesk 6.0</h4>
+                  <span class="d-inline text-green fw-bold"><a href="https://www.lbisoftware.com/home" target="_blank">@LBi Software</a></span>
+                </div>
+                <div class="timeline-content-subtitle">Secondary Project</div>
+                <p> 
+                  Production maintenance for existing clients running legacy versions of the HRHD Web application.
+                </p>
+                <div class="timeline-list">
+                  <ul class="fa-ul" style="margin-left:20px;">
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      - 
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      - 
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-angle-right text-green"></i></span>
+                      -
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline-tech-icons float-end">
+                  <i class="fab fa-java" data-bs-toggle="tooltip" data-bs-placement="top" title="Java 6"></i>
+                  <i class="fas fa-server" data-bs-toggle="tooltip" data-bs-placement="top" title="Apache Struts 1"></i>
+                  <i class="fas fa-database" data-bs-toggle="tooltip" data-bs-placement="top" title="MySQL / Oracle / SQLServer"></i>
+                  <i class="far fa-file-code" data-bs-toggle="tooltip" data-bs-placement="top" title="HTML"></i>
+                  <i class="fab fa-js" data-bs-toggle="tooltip" data-bs-placement="top" title="JavaScript"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -357,9 +448,9 @@
 
 
 
-    
+
     <!-- PROJECTS PAGE -->
-    <div id="page-projects" class="pagecontent container d-none">
+    <div id="page-projects" class="page-content container d-none">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
@@ -462,8 +553,8 @@
     </div>
 
     <!-- RESUME PAGE -->
-    <div id="page-resume" class="pagecontent container d-none">
-      resume
+    <div id="page-resume" class="page-content container d-none">
+
     </div>
   </div>
 
@@ -483,8 +574,8 @@
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-dblue">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="https://github.com/shawnfelix" target="_blank" class="text-link"><i class="fab fa-github px-2"></i>GitHub</a></li>
-            <li><a href="#" class="text-link"><i class="fas fa-at px-2"></i>Email me</a></li>
+            <li><a href="https://github.com/shawnfelix" target="_blank"><i class="fab fa-github px-2"></i>GitHub</a></li>
+            <li><a href="#"><i class="fas fa-at px-2"></i>Email me</a></li>
           </ul>
         </div>
       </div>
@@ -492,8 +583,9 @@
   </div>
 </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="js/popper.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
 
       
   </body>
