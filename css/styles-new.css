@@ -21,6 +21,12 @@ header {
         line-height: 10px;
         color: rgba(255, 255, 255, 0.863);
     }
+    .nav-link.nav-link-55-opa {
+        opacity: .55;
+    }
+    .nav-link.nav-link-25-opa {
+        opacity: .25;
+    }
 }
 
 
