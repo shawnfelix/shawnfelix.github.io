@@ -1,0 +1,229 @@
+:root {
+  --jumbotron-padding-y: 3rem;
+  font-family: "Inter", sans-serif; 
+}
+body {
+
+  font-family: "Inter", sans-serif; 
+}
+  
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.page-content {
+  border-top: 2px dashed #192F3D;
+  border-bottom: 2px dashed #192F3D;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.inline-icon {
+  width: 1em;
+  height: 1em;
+  margin-top:-3px;
+}
+
+.card {
+
+  transition: transform .25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s;
+  background: #192F3D;
+  color: #b8d5e6;
+  cursor:pointer;
+}
+.card:hover {
+  transform:translateY(-5px);
+}
+
+.hop-hover {
+  transition: transform .25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s;
+}
+.hop-hover:hover {
+  transform:translateY(-5px);
+}
+
+
+.tooltip-inner {
+  background-color: #246d5c !important;
+}
+.tooltip-arrow::before {
+  border-top-color: #246d5c !important;
+}
+
+
+.ext-link-button-icon {
+  position: absolute;
+  font-size: 13px;
+  right: 5px;
+  top: 5px;
+  font-weight: 600;
+}
+
+.section-title {
+  filter: drop-shadow(4px 4px 0px #224053);
+}
+#album-title {
+  font-weight:bolder;
+  color: #b8d5e6;
+  filter: drop-shadow(4px 4px 0px #224053);
+}
+@media(max-width:992px) {
+  .btn-action-container {
+    width:305px;
+  }
+}
+.btn-threed-dgreen { background: #246d5c; }
+.btn-threed-dgreen-front { background: #3bba9c; }
+.btn-threed-green { background: #3a796b; }
+.btn-threed-green-front { background: #76cfba; }
+a {
+  color: #3bba9c;
+}
+a:hover {
+
+}
+/* 3d button styles credit to https://www.joshwcomeau.com/animation/3d-button/ */
+.pushable {
+  border-radius: 3px;
+  border: none;
+  padding: 0;
+  margin-bottom:11px;
+  cursor: pointer;
+  outline-offset: 4px;
+  max-width:200px;
+  width:150px;
+  text-decoration:none;
+}
+.front {
+  display: block;
+  padding: 12px 25px;
+  border-radius: 3px;
+  font-size: 1.25rem;
+  font-weight:bold;
+  color: white;
+  transform: translateY(-6px);
+  transition: filter .2s ease;
+}
+.front:hover {
+  filter: brightness(90%);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+.ocean-container {
+  height:100px;
+  width:100%;
+  margin-top:-85px;
+  pointer-events:none;
+  position:relative;
+  overflow:hidden;
+}
+.ocean { 
+  margin-top: 4px;
+  height: 50px;
+  width:100%;
+  position:absolute;
+  left:0;
+  bottom:0px;
+  overflow-x:clip;
+}
+.wave-base {
+  width:100%;
+  height:15px;
+  bottom:0;
+  background: #4b758f;
+  /*background: #3b5e73;
+  background: #2f495a;*/
+  position:absolute;
+}
+
+.wave {
+  background: url("../assets/wave.svg") repeat-x; 
+  position: absolute;
+  bottom:0px;
+  width: 6400px;
+  height: 79px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite, swell-sm 7s ease infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  background: url("../assets/wave2.svg") repeat-x;
+  top: -30px;
+  height:120px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -1.5s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+.wave:nth-of-type(3) {
+  background: url("../assets/wave3.svg") repeat-x;
+  top: -25px;
+  height:120px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -3s infinite, swell 7s ease -2s infinite;
+  opacity: 1;
+}
+
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-10px,0);
+  }
+  50% {
+    transform: translate3d(0,15px,0);
+  }
+}
+
+@keyframes swell-sm {
+  0%, 100% {
+    transform: translate3d(0,-5px,0);
+  }
+  50% {
+    transform: translate3d(0,10px,0);
+  }
+}

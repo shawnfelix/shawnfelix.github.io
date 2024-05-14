@@ -1,30 +1,47 @@
 
-function togglePage(page) {
-    tabcontent = document.getElementsByClassName("page-content");
-    for(var i = 0; i < tabcontent.length; i++){
-        tabcontent[i].classList.add("d-none");
-    }
-    showPage = document.getElementById(page);
+/* sets nav bar opacity shades */
+document.addEventListener("DOMContentLoaded", function () {
+    const menuItems = document.querySelectorAll("#menu li a");
+    const currentPage = window.location.pathname;
 
-    showPage.classList.remove("d-none");
+    menuItems.forEach(function (item) {
+        const link = item.getAttribute("href");
+        const distance = Math.abs(link.length - currentPage.length); // Calculate distance
 
-    title = document.getElementById('album-title');
-    switch(page) {
-        case 'page-about':
-            title.innerHTML = 'About Me';
-            break;
-        case 'page-resume':
-            title.innerHTML = 'Resume';
-            break;
-        case 'page-projects':
-            title.innerHTML = 'Projects';
-            break;
+        // Adjust opacity based on distance
+        item.style.opacity = 1 - (distance * 0.1); // Adjust multiplier as needed
+    });
+});
 
-    }
-}
+/** nav bar sliding bar animation */
+document.addEventListener("DOMContentLoaded", function() {
+  const slideBar = document.getElementById("sliding-bar");
+  const list = document.getElementById("ph-page-nav-list");
+  const listItems = list.querySelectorAll("li");
+  
+  // Default to the first li element
+  const defaultItem = listItems[0];
+  slideToItem(defaultItem);
 
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+  listItems.forEach(function(item) {
+    item.addEventListener("mouseenter", function() {
+      slideToItem(item);
+    });
+  });
+  list.addEventListener("mouseleave", function() {
+    slideToItem(defaultItem)});
 
+  // Function to slide the bar to the specified item
+  function slideToItem(item) {
+    const rect = item.getBoundingClientRect();
+    const navLinkHeight = window.getComputedStyle(item.getElementsByClassName("nav-link")[0]);
+    const liTop = rect.top - parseFloat(navLinkHeight.paddingTop);
+    const percent = (liTop + list.offsetTop) / list.clientHeight * 100;
+    //slideBar.style.top = `${percent}%`;
+    
+    slideBar.style.height = `${rect.height}px`;
+
+    slideBar.style.top = `${rect.top -45}px`;
+    //slideBar.style.height = `${rect.height-10}px`;
+  }
+});
