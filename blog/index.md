@@ -36,7 +36,6 @@ permalink: /blog/
     const blogList = document.getElementById('blog-list');
     const items = Array.from(blogList.querySelectorAll('.blog-list-item'));
     const noResults = document.getElementById('no-results');
-
     function filterAndSort() {
       const query = searchInput.value.trim().toLowerCase();
       let visibleItems = items.filter(function(item) {
