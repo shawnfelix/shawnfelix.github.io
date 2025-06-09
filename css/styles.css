@@ -1,3 +1,11 @@
+/* Apply border-box globally to avoid box model surprises */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 :root {
     --offwhite: #dedede;
     font-family: "Inter", sans-serif; 
