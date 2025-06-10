@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="phelix keyboards">
+    <meta name="author" content="Phelix Keyboards">
+    <link rel="icon" type="image/x-icon" href="{{ '/favicon.png' | relative_url }}">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="preload" as="font" href="{{ '/assets/fonts/hooskai/HooskaiChamferedSquare.woff2' | relative_url }}" type="font/woff2" crossorigin>
+    <style>
+      html { overflow-y: scroll !important; }
+      /* Ensure font-display: swap for all custom fonts */
+      @font-face {
+        font-family: 'Hooskai';
+        src: url('{{ "/assets/fonts/hooskai/HooskaiChamferedSquare.woff2" | relative_url }}') format('woff2');
+        font-display: swap;
+        font-weight: normal;
+        font-style: normal;
+      }
+      /* If you use other custom fonts, add them here with font-display: swap */
+    </style>
+    <link href="{{ '/css/bootstrap.min.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/assets/fonts/inter/inter.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/assets/fonts/hooskai/hooskai.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/css/styles.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/css/timeline.css' | relative_url }}" rel="stylesheet">
+</head>
+<body>
+    <header style="display:none">
+        <!-- ...existing code... -->
+    </header>
+    <!-- Mobile Hamburger Menu (visible on small screens) -->
+    <button id="mobile-menu-toggle" class="d-md-none" aria-label="Open navigation" style="width:35px;height:35px;top:6.5px;right:18px;">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <!-- Mobile Fixed Header Bar -->
+    <div id="mobile-header-bar" class="d-md-none" style="position:fixed;top:0;left:0;width:100vw;height:48px;background:rgb(35 35 37 / 82%);backdrop-filter:blur(12px);z-index:1050;display:flex;align-items:center;">
+        <a id="header-phelix-keyboards-mobile" href="{{ '/' | relative_url }}" class="navbar-brand d-flex align-items-center" style="margin-left:18px;text-decoration:none;">
+            <span style="font-family:'Hooskai';font-size:1.05rem;color:#fff;letter-spacing:1px;">phelix keyboards</span>
+        </a>
+    </div>
+    <!-- Mobile Menu Overlay as top-right quadrant pane -->
+    <div id="mobile-menu-overlay" class="d-md-none" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:1050;">
+        <div id="mobile-menu-backdrop" style="position:absolute;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.18);"></div>
+        <nav id="mobile-menu-drawer" style="position:absolute;top:0;right:0;min-width:180px;width:auto;max-width:90vw;min-height:0;height:auto;background:rgb(35 35 37 / 82%);backdrop-filter:blur(18px);box-shadow:-2px 2px 24px rgba(0,0,0,0.18);border-bottom-left-radius:18px;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;transform:translateX(100%);transition:transform 0.25s cubic-bezier(.4,0,.2,1);padding:32px 0 5px 0;">
+            <ul style="list-style:none;padding:0 24px 0 18px;margin:0;width:100%;">
+                <li style="margin:18px 0;text-align:left;"><a class="nav-link" style="color:#fff;font-size:1.2rem;text-align:left;" {% if page.url == '/' %}class='active'{% endif %} href="{{ '/' | relative_url }}">Home</a></li>
+                <li style="margin:18px 0;text-align:left;"><a class="nav-link" style="color:#fff;font-size:1.2rem;text-align:left;" {% if page.url contains '/blog' %}class='active'{% endif %} href="{{ '/blog/' | relative_url }}">Blog</a></li>
+                <li style="margin:18px 0;text-align:left;"><a class="nav-link" style="color:#fff;font-size:1.2rem;text-align:left;" {% if page.url contains '/keyboards' %}class='active'{% endif %} href="{{ '/keyboards/' | relative_url }}">Keyboards</a></li>
+                <li style="margin:18px 0;text-align:left;"><a class="nav-link" style="color:#fff;font-size:1.2rem;text-align:left;" {% if page.url contains '/contact' %}class='active'{% endif %} href="{{ '/contact/' | relative_url }}">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <style>
+      /* Make nav-link active state more visible in mobile drawer */
+      #mobile-menu-drawer .nav-link.active {
+        font-weight: bold;
+        color: #b8aaff !important; /* soft purple accent */
+        background: none !important;
+        text-decoration: none !important;
+      }
+      #mobile-menu-drawer .nav-link:focus, #mobile-menu-drawer .nav-link:hover {
+        color: #b8aaff !important; /* soft purple accent */
+        background: none !important;
+        text-decoration: none !important;
+        filter: brightness(1.2);
+      }
+      #mobile-menu-toggle {
+        width: 35px !important;
+        height: 35px !important;
+        position: fixed;
+        /* Move icon down by 2px for perfect vertical alignment */
+        top: 8.5px !important;
+        right: 18px;
+        z-index: 1052;
+        background: none;
+        border: none;
+        padding: 6px;
+        cursor: pointer;
+      }
+      #mobile-menu-toggle .bar {
+        display: block;
+        position: absolute;
+        height: 3.2px;
+        width: 25.6px;
+        background: #fff;
+        border-radius: 2px;
+        opacity: 1;
+        left: 4.5px;
+        transition: 0.25s cubic-bezier(.4,0,.2,1);
+      }
+      #mobile-menu-toggle .bar:nth-child(1) { top: 3.2px; }
+      #mobile-menu-toggle .bar:nth-child(2),
+      #mobile-menu-toggle .bar:nth-child(3) { top: 12.8px; }
+      #mobile-menu-toggle .bar:nth-child(4) { top: 22.4px; }
+      #mobile-menu-toggle.open .bar:nth-child(1) {
+        top: 12.8px;
+        width: 0%;
+        left: 50%;
+      }
+      #mobile-menu-toggle.open .bar:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      #mobile-menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      #mobile-menu-toggle.open .bar:nth-child(4) {
+        top: 12.8px;
+        width: 0%;
+        left: 50%;
+      }
+      #mobile-header-bar {
+        height: 48px !important;
+        background: rgb(35 35 37 / 82%) !important;
+      }
+      #mobile-menu-drawer {
+        min-width: 180px;
+        width: auto;
+        max-width: 90vw;
+        min-height: 0;
+        height: auto;
+        /* Reduce bottom padding to minimize whitespace */
+        padding: 32px 0 10px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        background: rgb(35 35 37 / 82%) !important;
+      }
+      #mobile-menu-drawer ul {
+        padding: 0 24px 0 18px !important;
+        margin: 0;
+        width: 100%;
+      }
+      #main-content {
+        padding-top: 18px;
+      }
+      body, html, .container, .fluid-container, .col-md-11, .display-2, .display-4, .display-5, .display-6, .blog-list, .blog-post-card, .blog-info, .blog-title, .blog-meta, .blog-desc, .navbar, .nav-link, .navbar-brand, .main-content, #main-content, p, h1, h2, h3, h4, h5, h6, ul, li, a, div {
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 300 !important; /* Inter Light */
+      }
+      .hooskai, [style*="font-family:'Hooskai"], [style*='font-family:Hooskai'] {
+        font-family: 'Hooskai', serif !important;
+        font-weight: normal !important;
+      }
+      @media (max-width: 767.98px) {
+        #mobile-header-bar {
+          height: 48px !important;
+          background: rgb(35 35 37 / 82%) !important;
+        }
+        body {
+          padding-top: 48px !important;
+        }
+        #main-content {
+          padding-top: 18px !important;
+        }
+        #mobile-menu-toggle {
+          display: block !important;
+        }
+        /* Hide desktop navbar on mobile */
+        nav.navbar.col-md-11 {
+          display: none !important;
+        }
+      }
+    </style>
+    <script src="{{ '/js/animation-scripts.js' | relative_url }}"></script>
+    <script>
+      // Mobile menu toggle logic (top-right quadrant style) with nav-icon3 hamburger/X animation (4 bars)
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const menuOverlay = document.getElementById('mobile-menu-overlay');
+      const menuDrawer = document.getElementById('mobile-menu-drawer');
+      const menuBackdrop = document.getElementById('mobile-menu-backdrop');
+      if(menuToggle && menuOverlay && menuDrawer && menuBackdrop) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = menuToggle.classList.contains('open');
+          if (!isOpen) {
+            menuOverlay.style.display = 'block';
+            setTimeout(() => { menuDrawer.style.transform = 'translateX(0)'; }, 10);
+            document.body.style.overflow = 'hidden';
+            menuToggle.classList.add('open');
+          } else {
+            menuDrawer.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+              menuOverlay.style.display = 'none';
+              document.body.style.overflow = '';
+              menuToggle.classList.remove('open');
+            }, 250);
+          }
+        });
+        function closeMenu() {
+          menuDrawer.style.transform = 'translateX(100%)';
+          setTimeout(() => {
+            menuOverlay.style.display = 'none';
+            document.body.style.overflow = '';
+            menuToggle.classList.remove('open');
+          }, 250);
+        }
+        menuBackdrop.addEventListener('click', closeMenu);
+      }
+    </script>
+    <div class="container">
+        <nav class="navbar col-md-11">
+            <a id="header-phelix-keyboards" href="{{ '/' | relative_url }}" class="navbar-brand d-flex align-items-center ">
+                <h3><span style="font-family:'Hooskai';">phelix </br>keyboards</span></h3>
+            </a>
+            <div style="width: 100%;">
+                <hr class="bg-off-white col-sm-11" style="height: 2px; margin:0px;border-radius:10px;opacity:1;">
+            </div>
+        </nav>
+        <nav id="sidebar" class="navbar navbar-dark fixed-top d-none d-md-flex">
+            <div class="container" style="height:0px; padding: 0px;">
+                <div class="col-2 offset-10 d-flex" style="position:relative;padding-left:20px;margin-top:45px;">
+                    <div style="width: 10px;">
+                        <div id="sliding-bar">
+                            <div id="sliding-bar-inner"></div>
+                        </div>
+                    </div>
+                    <ul id="ph-page-nav-list" class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.url == '/' %}active{% endif %}" aria-current="page" href="{{ '/' | relative_url }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.url contains '/blog' %}active{% endif %}" href="{{ '/blog/' | relative_url }}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.url contains '/keyboards' %}active{% endif %}" href="{{ '/keyboards/' | relative_url }}">Keyboards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.url contains '/contact' %}active{% endif %}" href="{{ '/contact/' | relative_url }}">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="col-md-11">
+            <div id="main-content" class="col-md-11">
+                {{ content }}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+title: Phelix Keyboards
+description: phelix keyboards
+baseurl: "" # for user/organization site
+url: "https://shawnfelix.github.io"
+markdown: kramdown
+theme: minima
