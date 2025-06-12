@@ -87,8 +87,16 @@ body {
     background-color:var(--ph-light) !important;
     border-radius:2px;
     color: var(--ph-bg-dark);
+    user-select:none
 }
 
+/* Links */
+a {
+  color: rgb(116, 149, 196);
+}
+a:hover, a:focus {
+  color: rgb(74, 115, 173);
+}
 
 /* side bar nav */
 #sidebar {
