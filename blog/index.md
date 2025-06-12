@@ -6,7 +6,7 @@ permalink: /blog/
 
 <div class="fluid-container">
   <div class="col-md-11">
-    <h1 class="mb-4" style="font-family:'Inter',sans-serif;letter-spacing:1px;">Blog</h1>
+    <h1 class="mb-4 user-select-none" style="font-family:'Inter',sans-serif;letter-spacing:1px;">Blog</h1>
     <div style="display:flex;align-items:center;gap:12px;max-width:100%;margin-bottom:18px;">
       <input id="blog-search" type="text" class="form-control" placeholder="Search blog posts..." style="max-width:320px; font-size:1.1rem; font-weight:300; height:32px; background:var(--ph-bg-medium); color:var(--ph-light); border:none; border-radius:8px; padding:4px 12px;">
       <select id="blog-sort" class="form-select" style="width:140px; height:32px; background:var(--ph-bg-medium); color:var(--ph-light); border:none; border-radius:8px; font-size:1.05rem; font-weight:300;">
